@@ -1,41 +1,32 @@
-#include <cstdio>
 #include <iostream>
-#include <string>
 
+int PanjangPesan(const char* str) {
+    int len = 0;
+    while (str[len] != '\0') {
+        len++;
+    }
+    return len;
+}
 
+int main() {
+    char input[10000];
+    std::cout << "masukkan pesan: ";
+    std::cin >> input;
 
-int main(){
-    std::string oldname;
-    std::string newname;
+    int len = PanjangPesan(input);
     
-    std::cout<<"massage: ";
-    std::cin>>oldname;
-    std::cout<<"real: ";
-
-    for (std::size_t i = 0; i<oldname.size(); i++){
-        static char prevbet = 0;
-        static char realbet;
-        char bet = oldname[i] - 64;
-        printf("%d\n", bet + 64);
+    if (len > 0) {
+        std::cout << "pesan terenkripsi: ";
+        std::cout << input[0];
+        for (int i = 1; i < len; ++i) {
+            int HurufAsli = input[i] - 'A';
+            int pergeseran = input[i - 1] - 'A' + 1;
+            int HurufBaru = (HurufAsli + pergeseran) % 26;
+            char KalimatBaru = 'A' + HurufBaru;
+            std::cout << KalimatBaru;
+        }
+        std::cout << '\n';
     }
 
-    std::cout<<std::endl;
-    std::cout<<"encrypt: ";
-
-    for (std::size_t i = 0; i<oldname.size(); i++){
-        static char prevbet = 0;
-        static char realbet;
-        char bet = oldname[i] - 64;
-        
-        realbet = bet + prevbet;
-
-        realbet = (realbet > 26) ? (realbet - 26) : realbet; 
-        
-        printf("%c\n", realbet + 64);
-        prevbet = bet;
-    }
-
-    std::cout<<std::endl;
-    
     return 0;
 }
