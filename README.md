@@ -2,7 +2,7 @@
 
 ## Identitas
 * **Nama Lengkap:** Nadhif Nur Salim
-* **Kelompok:** [Isi dengan nama atau nomor kelompokmu di sini]
+* **Kelompok:** Ruby
 
 ## Deskripsi Repository
 Repository ini dibuat untuk memenuhi tugas Pemrograman Dasar dari rangkaian kegiatan TETI Lab Skill (TLS) 2026. Di dalam repository ini, terdapat penyelesaian dari dua buah masalah pemrograman:
